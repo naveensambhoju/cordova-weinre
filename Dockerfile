@@ -3,25 +3,28 @@ FROM node:18-bullseye
 # Install Java and Ant
 RUN apt-get update && apt-get install -y openjdk-11-jdk ant
 
-# Set environment variables
+# Set Java environment
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH=$PATH:$JAVA_HOME/bin
-ENV PROJECT_SERVER=/app
 
 # Set working directory
 WORKDIR /app
 
-# Copy all project files
+# Copy everything
 COPY . .
 
-# Install CoffeeScript locally and globally
-RUN npm install coffee-script && npm install -g coffee-script
+# Install CoffeeScript inside weinre.server
+WORKDIR /app/weinre.server
+RUN npm install coffee-script
 
-# Build Weinre (Ant uses PROJECT_SERVER here)
+# Return to root
+WORKDIR /app
+
+# Run Ant build
 RUN ant
 
 # Expose port
 EXPOSE 8080
 
-# Start Weinre
+# Run Weinre
 CMD ["node", "weinre", "--httpPort", "8080", "--boundHost", "0.0.0.0"]
