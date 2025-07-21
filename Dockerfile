@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y openjdk-11-jdk ant
 # Set environment variables
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH=$PATH:$JAVA_HOME/bin
-ENV PROJECT_SERVER=/app  # Set PROJECT_SERVER so Ant uses the correct path
+ENV PROJECT_SERVER=/app
 
 # Set working directory
 WORKDIR /app
