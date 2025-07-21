@@ -33,8 +33,6 @@
   <echo message="PROJECT_SERVER = ${PROJECT_SERVER}" />
   
   <!-- Rest of your build steps... -->
-</project>
-
 
     <!-- hint: override in your personal.properties -->
     <property name="BUILDER" value="The Unknown Builder"/>
