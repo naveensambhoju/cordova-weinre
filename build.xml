@@ -255,7 +255,7 @@ To update the weinre dependencies, use
             <arg value="--bare"/>
             <arg value="--output"/>
             <arg value="${TMP}/modules/weinre/client"/>
-            <arg value="../${PROJECT_WEB}/modules/weinre/client"/>
+            <arg value="${PROJECT_WEB}/modules/weinre/client"/>
         </exec>
 
         <echo message="compiling CoffeeScript files in: ${PROJECT_WEB}/modules/weinre/common"/>
@@ -265,7 +265,7 @@ To update the weinre dependencies, use
             <arg value="--bare"/>
             <arg value="--output"/>
             <arg value="${TMP}/modules/weinre/common"/>
-            <arg value="../${PROJECT_WEB}/modules/weinre/common"/>
+            <arg value="${PROJECT_WEB}/modules/weinre/common"/>
         </exec>
 
         <echo message="compiling CoffeeScript files in: ${PROJECT_WEB}/modules/weinre/target"/>
@@ -275,7 +275,7 @@ To update the weinre dependencies, use
             <arg value="--bare"/>
             <arg value="--output"/>
             <arg value="${TMP}/modules/weinre/target"/>
-            <arg value="../${PROJECT_WEB}/modules/weinre/target"/>
+            <arg value="${PROJECT_WEB}/modules/weinre/target"/>
         </exec>
 
         <echo message="transportd-izing modules"/>
@@ -288,7 +288,7 @@ To update the weinre dependencies, use
         </exec>
 
         <copy todir="${WEB}">
-            <fileset file="../${PROJECT_WEB}/modjewel.js"/>
+            <fileset file="${PROJECT_WEB}/modjewel.js"/>
         </copy>
 
 <!--
@@ -298,7 +298,7 @@ To update the weinre dependencies, use
 -->
 
         <copy todir="${WEB}">
-            <fileset dir="../${PROJECT_WEB}">
+            <fileset dir="${PROJECT_WEB}">
                 <exclude name="versions.js"/>
                 <exclude name="common/**/*"/>
                 <exclude name="bin/**/*"/>
@@ -323,7 +323,7 @@ To update the weinre dependencies, use
 
         <echo message="building versions.js"/>
         <copy todir="${WEB}">
-            <fileset dir="../${PROJECT_WEB}">
+            <fileset dir="${PROJECT_WEB}">
                 <include name="versions.js"/>
             </fileset>
 
@@ -363,7 +363,7 @@ To update the weinre dependencies, use
 
         <copy file="${WEB}/doc/Home.html" tofile="${WEB}/doc/index.html"/>
 
-        <copy todir="${WEB}/doc/images" file="../${PROJECT_WEB}/images/weinre-icon-64x64.png"/>
+        <copy todir="${WEB}/doc/images" file="${PROJECT_WEB}/images/weinre-icon-64x64.png"/>
 
         <copy todir="${WEB}/doc/css">     <fileset dir="../${PROJECT_DOC}/css"/>     </copy>
         <copy todir="${WEB}/doc/images">  <fileset dir="../${PROJECT_DOC}/images"/>  </copy>
