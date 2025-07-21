@@ -50,7 +50,7 @@ def main():
         oFileName = args[1]
 
     # read input
-    iFile = file(iFileName)
+    iFile = open(iFileName, 'r')
     content = iFile.read()
     iFile.close()
 
