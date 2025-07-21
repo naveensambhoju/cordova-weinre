@@ -227,8 +227,8 @@ To update the weinre dependencies, use
             <arg value="--compile"/>
             <arg value="--bare"/>
             <arg value="--output"/>
-            <arg value="../${PROJECT_SERVER}/lib"/>
-            <arg value="../${PROJECT_SERVER}/lib-src"/>
+            <arg value="weinre.server/lib"/>
+            <arg value="weinre.server/lib-src"/>
         </exec>
     </target>
 
