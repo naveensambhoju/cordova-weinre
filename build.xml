@@ -26,6 +26,15 @@
     <property file="personal.properties" />
     <property file="build.properties" />
     <property file="vendor.properties" />
+    <project name="weinre" default="build">
+
+  <!-- Load custom build properties -->
+  <property file="weinre.build/build.properties" />
+  <echo message="PROJECT_SERVER = ${PROJECT_SERVER}" />
+  
+  <!-- Rest of your build steps... -->
+</project>
+
 
     <!-- hint: override in your personal.properties -->
     <property name="BUILDER" value="The Unknown Builder"/>
