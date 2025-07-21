@@ -26,4 +26,4 @@ RUN ls -la /app/scripts
 
 # Run the server
 EXPOSE 8080
-CMD ["node", "weinre", "--httpPort", "8080", "--boundHost", "0.0.0.0"]
+CMD ["node", "weinre.server/lib/weinre.js", "--httpPort", "8080", "--boundHost", "0.0.0.0"]
