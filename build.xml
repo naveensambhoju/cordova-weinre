@@ -417,13 +417,13 @@ To update the weinre dependencies, use
         </simple-idl2json>
 
         <exec executable="python" failonerror="true" failifexecutionfails="true">
-            <arg file="scripts/collect-all-json-idl.py"/>
+            <arg file="weinre.build/scripts/collect-all-json-idl.py"/>
             <arg file="${CACHED}/json-idl/all-json-idls.js"/>
             <arg file="${CACHED}/json-idl"/>
         </exec>
 
         <exec executable="python" failonerror="true" failifexecutionfails="true">
-            <arg file="scripts/collect-all-json-idl.py"/>
+            <arg file="weinre.build/scripts/collect-all-json-idl.py"/>
             <arg value="-min"/>
             <arg file="${CACHED}/json-idl/all-json-idls-min.js"/>
             <arg file="${CACHED}/json-idl"/>
@@ -440,7 +440,7 @@ To update the weinre dependencies, use
         <mkdir dir="${WEB}/target"/>
 
         <exec executable="python" failonerror="true" failifexecutionfails="true">
-            <arg file="scripts/build-target-scripts.py"/>
+            <arg file="weinre.build/scripts/build-target-scripts.py"/>
             <arg file="${WEB}"/>
             <arg file="${WEB}/target"/>
         </exec>
