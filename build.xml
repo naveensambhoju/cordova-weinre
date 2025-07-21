@@ -334,7 +334,7 @@ To update the weinre dependencies, use
         </copy>
 
         <echo message="building package.json"/>
-        <copy file="package.json.template"  tofile="../${PROJECT_SERVER}/package.json" overwrite="true">
+        <copy file="weinre.build/package.json.template"  tofile="${PROJECT_SERVER}/package.json" overwrite="true">
             <filterset>
                 <filter token="WEINRE_VERSION" value="${BUILD_VERSION}"/>
             </filterset>
