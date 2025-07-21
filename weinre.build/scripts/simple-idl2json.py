@@ -403,7 +403,7 @@ def clean(content):
 #--------------------------------------------------------------------
 def log(message):
     message = "%s: %s" % (PROGRAM_NAME, message)
-    print >>sys.stderr, message
+    print(message, file=sys.stderr)
 
 #--------------------------------------------------------------------
 def error(message):
