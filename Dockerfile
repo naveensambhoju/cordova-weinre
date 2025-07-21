@@ -10,14 +10,17 @@ ENV PATH=$PATH:$JAVA_HOME/bin
 # Set working directory
 WORKDIR /app
 
-# Copy source code
+# Copy all project files to the container
 COPY . .
 
-# Build weinre
+# Make sure build.xml exists
+RUN test -f build.xml
+
+# Build Weinre
 RUN ant
 
-# Expose weinre port
+# Expose port used by Weinre
 EXPOSE 8080
 
-# Run weinre
+# Run Weinre on startup
 CMD ["node", "weinre", "--httpPort", "8080", "--boundHost", "0.0.0.0"]
