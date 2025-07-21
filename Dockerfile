@@ -6,24 +6,22 @@ RUN apt-get update && apt-get install -y openjdk-11-jdk ant
 # Set environment variables
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH=$PATH:$JAVA_HOME/bin
+ENV PROJECT_SERVER=/app  # Set PROJECT_SERVER so Ant uses the correct path
 
 # Set working directory
 WORKDIR /app
 
-# Copy all project files to the container
+# Copy all project files
 COPY . .
 
-# Install CoffeeScript globally and locally
+# Install CoffeeScript locally and globally
 RUN npm install coffee-script && npm install -g coffee-script
 
-# Make sure build.xml exists
-RUN test -f build.xml
-
-# Build Weinre
+# Build Weinre (Ant uses PROJECT_SERVER here)
 RUN ant
 
-# Expose Weinre port
+# Expose port
 EXPOSE 8080
 
-# Run Weinre
+# Start Weinre
 CMD ["node", "weinre", "--httpPort", "8080", "--boundHost", "0.0.0.0"]
