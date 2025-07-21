@@ -142,8 +142,8 @@ def processDir(dir, path=None, modules=None):
         oFileName = "%s%s" % (oFileName, AMDExtension)
 
         if False:
-            print "processing:   %s" % fullEntry
-            print "   oFileName: %s" % oFileName
+            print ("processing:   %s" % fullEntry)
+            print ("   oFileName: %s" % oFileName)
             continue
 
         iFile = file(iFileName)
@@ -187,13 +187,13 @@ def processDir(dir, path=None, modules=None):
 #-------------------------------------------------------------------------------
 def log(message):
     if Quiet: return
-    print "%s: %s" % (PROGRAM, message)
+    print ("%s: %s" % (PROGRAM, message))
 
 #-------------------------------------------------------------------------------
 #
 #-------------------------------------------------------------------------------
 def error(message):
-    print "%s: %s" % (PROGRAM, message)
+    print ("%s: %s" % (PROGRAM, message))
     exit(1)
 
 #-------------------------------------------------------------------------------
