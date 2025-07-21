@@ -17,6 +17,9 @@ COPY . .
 WORKDIR /app/weinre.server
 RUN npm install coffee-script
 
+RUN test -f node_modules/coffee-script/bin/coffee && echo "CoffeeScript found" || echo "CoffeeScript MISSING"
+
+
 # Return to root
 WORKDIR /app
 
