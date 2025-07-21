@@ -106,7 +106,7 @@ relative module names.
 
     htmlFileName = os.path.join(OutDir, htmlFile)
 
-    htmlFile = file(htmlFileName, "w")
+    htmlFile = open(htmlFileName, "w")
     htmlFile.write("\n".join(contents))
     htmlFile.close()
 
@@ -146,7 +146,7 @@ def processDir(dir, path=None, modules=None):
             print ("   oFileName: %s" % oFileName)
             continue
 
-        iFile = file(iFileName)
+        iFile = open(iFileName, 'r')
         contents = iFile.read()
         iFile.close()
 
@@ -174,7 +174,7 @@ def processDir(dir, path=None, modules=None):
             except:
                 error("error creating output directory '%s'" % oDirName)
 
-        oFile = file(oFileName, "w")
+        oFile = open(oFileName, "w")
         oFile.write(newContents)
         oFile.close()
 
