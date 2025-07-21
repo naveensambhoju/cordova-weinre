@@ -56,7 +56,7 @@
     </exec>
 
     <exec executable="node">
-        <arg value="weinre.server/node_modules/coffee-script/bin/coffee" />
+        <arg value="./weinre.server/node_modules/coffee-script/bin/coffee" />
     </exec>
 
     <condition property="BUILD_VERSION" value="${WEINRE_VERSION}-${BUILD_DATE}">
