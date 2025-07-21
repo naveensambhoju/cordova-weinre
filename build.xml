@@ -280,7 +280,7 @@ To update the weinre dependencies, use
 
         <echo message="transportd-izing modules"/>
         <exec executable="python" failonerror="true" failifexecutionfails="true">
-            <arg  file="scripts/module2amd.py"/>
+            <arg  file="weinre.build/scripts/module2amd.py"/>
             <arg value="--quiet"/>
             <arg value="--out"/>
             <arg  file="${WEB}"/>
