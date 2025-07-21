@@ -345,7 +345,7 @@ To update the weinre dependencies, use
          documentation
          ============================================================ -->
 
-    <target name="build-doc">
+    <!-- <target name="build-doc">
 
         <mkdir  dir="${WEB}/doc" />
 
@@ -371,7 +371,7 @@ To update the weinre dependencies, use
 
         <delete dir="${WEB}/doc/images/orig" />
 
-    </target>
+    </target> -->
 
     <!-- ============================================================
          convert IDL to JSON (cached)
