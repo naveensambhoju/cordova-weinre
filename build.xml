@@ -647,26 +647,27 @@ To update the weinre dependencies, use
          ============================================================ -->
 
     <macrodef name="build-html">
-       <attribute name="name"/>
-       <attribute name="title"/>
-       <attribute name="iDir"/>
-       <attribute name="oDir"/>
-       <element name="args" optional="true" implicit="true"/>
-       <sequential>
-           <delete file="@{oDir}/@{name}.html"/>
-           <concat destfile="@{oDir}/@{name}.html">
-               <filelist dir="@{iDir}" files="boilerplate-header.html.txt"/>
-               <filelist dir="@{iDir}" files="@{name}.body.html"/>
-               <filelist dir="@{iDir}" files="boilerplate-trailer.html.txt"/>
-               <filterchain>
-                  <replacetokens>
+    <attribute name="name"/>
+    <attribute name="title"/>
+    <attribute name="iDir"/>
+    <attribute name="oDir"/>
+    <element name="args" optional="true" implicit="true"/>
+    <sequential>
+        <delete file="@{oDir}/@{name}.html"/>
+        <concat destfile="@{oDir}/@{name}.html">
+            <file file="@{iDir}/boilerplate-header.html.txt"/>
+            <file file="@{iDir}/@{name}.body.html"/>
+            <file file="@{iDir}/boilerplate-trailer.html.txt"/>
+            <filterchain>
+                <replacetokens>
                     <token key="PAGE_NAME" value="@{title}"/>
-                  </replacetokens>
-                </filterchain>
-           </concat>
-           <echo>generated @{oDir}/@{name}.html</echo>
-       </sequential>
-    </macrodef>
+                </replacetokens>
+            </filterchain>
+        </concat>
+        <echo>generated @{oDir}/@{name}.html</echo>
+    </sequential>
+</macrodef>
+
 
     <!-- ============================================================ -->
 </project>
