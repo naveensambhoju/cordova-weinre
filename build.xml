@@ -653,18 +653,18 @@ To update the weinre dependencies, use
     <attribute name="oDir"/>
     <element name="args" optional="true" implicit="true"/>
     <sequential>
-        <delete file="@{oDir}/@{name}.html"/>
-        <concat destfile="@{oDir}/@{name}.html">
-            <file file="@{iDir}/boilerplate-header.html.txt"/>
-            <file file="@{iDir}/@{name}.body.html"/>
-            <file file="@{iDir}/boilerplate-trailer.html.txt"/>
+        <delete file="weinre.doc/@{name}.html"/>
+        <concat destfile="weinre.doc/@{name}.html">
+            <file file="weinre.doc/boilerplate-header.html.txt"/>
+            <file file="weinre.doc/@{name}.body.html"/>
+            <file file="weinre.doc/boilerplate-trailer.html.txt"/>
             <filterchain>
                 <replacetokens>
                     <token key="PAGE_NAME" value="@{title}"/>
                 </replacetokens>
             </filterchain>
         </concat>
-        <echo>generated @{oDir}/@{name}.html</echo>
+        <echo>generated weinre.doc/@{name}.html</echo>
     </sequential>
 </macrodef>
 
