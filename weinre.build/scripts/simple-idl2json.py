@@ -42,7 +42,8 @@ def main():
         AnyTypes.extend(options.anyType)
 
     if len(args) <= 0: error("no input files specified")
-    iFileName = args[0]
+    # iFileName = args[0]
+    iFileName = "weinre.server/interfaces/WeinreClientCommands.idl"
 
     if len(args) <= 1:
         oFileName = "<stdout>"
