@@ -13,14 +13,17 @@ WORKDIR /app
 # Copy all project files to the container
 COPY . .
 
+# Install CoffeeScript globally and locally
+RUN npm install coffee-script && npm install -g coffee-script
+
 # Make sure build.xml exists
 RUN test -f build.xml
 
 # Build Weinre
 RUN ant
 
-# Expose port used by Weinre
+# Expose Weinre port
 EXPOSE 8080
 
-# Run Weinre on startup
+# Run Weinre
 CMD ["node", "weinre", "--httpPort", "8080", "--boundHost", "0.0.0.0"]
