@@ -78,7 +78,7 @@ def main():
     if oFileName == "<stdout>":
         oFile = sys.stdout
     else:
-        oFile = file(oFileName,"w")
+        oFile = open(oFileName,"w")
 
     oFile.write(jsonModule)
 
