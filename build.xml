@@ -467,7 +467,7 @@ To update the weinre dependencies, use
         </replaceregexp>
 
         <exec executable="python" failonerror="true" failifexecutionfails="true">
-            <arg file="scripts/build-client-html.py"/>
+            <arg file="weinre.build/scripts/build-client-html.py"/>
             <arg file="${WEB}"/>
         </exec>
 
