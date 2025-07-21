@@ -346,35 +346,31 @@ To update the weinre dependencies, use
          ============================================================ -->
 
     <target name="build-doc">
+
         <mkdir  dir="${WEB}/doc" />
 
         <copy todir="${WEB}/doc" file="${OUT}/build-info.txt"/>
 
-        <build-html name="Building"      title="Building"       oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
-        <build-html name="Home"          title="Home"           oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
-        <build-html name="Installing"    title="Installing"     oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
-        <build-html name="License"       title="License"        oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
-        <build-html name="Running"       title="Running"        oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
-        <build-html name="MultiUser"     title="Multi-User"     oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
-        <build-html name="Security"      title="Security"       oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
-        <build-html name="UserInterface" title="User Interface" oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
-        <build-html name="ChangeLog"     title="ChangeLog"      oDir="${WEB}/doc" iDir="weinre.server/web/doc"/>
+        <build-html name="Building"      title="Building"       oDir="${WEB}/doc" iDir="weinre.doc"/>
+        <build-html name="Home"          title="Home"           oDir="${WEB}/doc" iDir="weinre.doc"/>
+        <build-html name="Installing"    title="Installing"     oDir="${WEB}/doc" iDir="weinre.doc"/>
+        <build-html name="License"       title="License"        oDir="${WEB}/doc" iDir="weinre.doc"/>
+        <build-html name="Running"       title="Running"        oDir="${WEB}/doc" iDir="weinre.doc"/>
+        <build-html name="MultiUser"     title="Muli-User"      oDir="${WEB}/doc" iDir="weinre.doc"/>
+        <build-html name="Security"      title="Security"       oDir="${WEB}/doc" iDir="weinre.doc"/>
+        <build-html name="UserInterface" title="User Interface" oDir="${WEB}/doc" iDir="weinre.doc"/>
+        <build-html name="ChangeLog"     title="ChangeLog"      oDir="${WEB}/doc" iDir="weinre.doc"/>
 
         <copy file="${WEB}/doc/Home.html" tofile="${WEB}/doc/index.html"/>
 
         <copy todir="${WEB}/doc/images" file="weinre.web/images/weinre-icon-64x64.png"/>
 
-        <copy todir="${WEB}/doc/css">
-            <fileset dir="weinre.server/web/doc/css"/>
-        </copy>
-        <copy todir="${WEB}/doc/images">
-            <fileset dir="weinre.server/web/doc/images"/>
-        </copy>
-        <copy todir="${WEB}/doc/scripts">
-            <fileset dir="weinre.server/web/doc/scripts"/>
-        </copy>
+        <copy todir="${WEB}/doc/css">     <fileset dir="weinre.server/web/doc/css"/>     </copy>
+        <copy todir="${WEB}/doc/images">  <fileset dir="weinre.server/web/doc/images"/>  </copy>
+        <copy todir="${WEB}/doc/scripts"> <fileset dir="weinre.server/web/doc/scripts"/> </copy>
 
         <delete dir="${WEB}/doc/images/orig" />
+
     </target>
 
     <!-- ============================================================
