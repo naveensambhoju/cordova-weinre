@@ -189,7 +189,7 @@ To update the weinre dependencies, use
         <antcall target="build-json-idl"/>
         <antcall target="build-client"/>
         <antcall target="build-target"/>
-        <antcall target="build-doc"/>
+        <!-- <antcall target="build-doc"/> -->
 
         <tstamp>
             <format property="TSTAMP_FINISHED" pattern="HH:mm:ss"/>
