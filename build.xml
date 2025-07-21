@@ -633,7 +633,7 @@ To update the weinre dependencies, use
        <element name="args" optional="true" implicit="true"/>
        <sequential>
            <exec executable="python" failonerror="true" failifexecutionfails="true">
-               <arg file="scripts/simple-idl2json.py"/>
+               <arg file="weinre.build/scripts/simple-idl2json.py"/>
                <args/>
                <arg value="--validate"/>
                <arg file="@{iDir}/@{name}.idl"/>
